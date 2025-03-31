@@ -1,15 +1,56 @@
-<h1 align="center">Hi I'm Jacqueline Bown</h1>
-<h3 align="center">A passionate DevOps Engineer from the United States</h3>
+<h1 align="center">Hi I'm Jacqueline Brown</h1>
+<h3 align="center">A passionate Developer & DevOps Engineer from the United States</h3>
 
-- 🌱 I’m currently learning **Cloud Development, DevOps In the Cloud, Serverless Functions, Machine Learning**
+- 🌱 I’m currently learning  about **Cloud Development, DevOps In the Cloud, Serverless Functions, Machine Learning**
 
-- 👨‍💻 All of my projects are available at [http://www.github.com/msjackiebrown](http://www.github.com/msjackiebrown)
+- 👨‍💻 You can view all of my projects  at: [http://www.github.com/msjackiebrown](http://www.github.com/msjackiebrown)
 
-- 💬 Ask me about **java, devops, maven, vs code, git, aws**
+- 💬 You can ask me questions about **java, devops, maven, vs code, git, aws, cloud computing, website design, spring boot, serverless design & computing**
 
-- 📫 How to reach me **msjackiebrown0503@gmail.com**
+- 📫 You can reach me at: **msjackiebrown0503@gmail.com**
 
-- 📄 Know about my experiences [http://www.githum.com/msjackiebrown/resume](http://www.githum.com/msjackiebrown/resume)
+- 📄 Download my resume [http://www.githum.com/msjackiebrown/resume](http://www.github.com/msjackiebrown/resume)
+
+
+<h3 align="left">Here are a few of the current projects on which I am working:</h3>
+
+<div>
+  <h4>Project 1</h4>
+  <p>A brief description of Project 1. This project focuses on [specific functionality or purpose].</p>
+  <a href="https://github.com/msjackiebrown/project1" target="_blank">View on GitHub</a>
+  <br>
+  <img src="https://via.placeholder.com/600x300" alt="Project 1 Screenshot" width="600" />
+  <br>
+  <a href="https://www.youtube.com/watch?v=example1" target="_blank">Watch Demo on YouTube</a>
+  <!-- Uncomment the line below to embed the video directly -->
+  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/example1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</div>
+
+<div>
+  <h4>Project 2</h4>
+  <p>A brief description of Project 2. This project focuses on [specific functionality or purpose].</p>
+  <a href="https://github.com/msjackiebrown/project2" target="_blank">View on GitHub</a>
+  <br>
+  <img src="https://via.placeholder.com/600x300" alt="Project 2 Screenshot" width="600" />
+  <br>
+  <a href="https://www.youtube.com/watch?v=example2" target="_blank">Watch Demo on YouTube</a>
+  <!-- Uncomment the line below to embed the video directly -->
+  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/example2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</div>
+
+<div>
+  <h4>Project 3</h4>
+  <p>A brief description of Project 3. This project focuses on [specific functionality or purpose].</p>
+  <a href="https://github.com/msjackiebrown/project3" target="_blank">View on GitHub</a>
+  <br>
+  <img src="https://via.placeholder.com/600x300" alt="Project 3 Screenshot" width="600" />
+  <br>
+  <a href="https://www.youtube.com/watch?v=example3" target="_blank">Watch Demo on YouTube</a>
+  <!-- Uncomment the line below to embed the video directly -->
+  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/example3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</div>
+
+
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">

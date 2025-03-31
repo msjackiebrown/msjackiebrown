@@ -1,6 +1,3 @@
-<h1 align="center">Hi I'm Jacqueline Brown</h1>
-<h3 align="center">A passionate Developer & DevOps Engineer from the United States</h3>
-
 - 🌱 I’m currently learning  about **Cloud Development, DevOps In the Cloud, Serverless Functions, Machine Learning**
 
 - 👨‍💻 You can view all of my projects  at: [http://www.github.com/msjackiebrown](http://www.github.com/msjackiebrown)

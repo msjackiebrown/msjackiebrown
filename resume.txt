@@ -1,0 +1,72 @@
+JACQUELINE D BROWN
+
+Columbus, OH 43231
+614-203-7099
+msjackiebrown0503@gmail.com
+WWW: linkedin.com/msjackiebrown
+WWW: github.com/msjackiebrown
+
+Skills
+
+CI/CD Pipelines
+
+Jenkins, Docker
+
+AWS Lambda, ECS, Elastic Beanstalk
+
+Java, Spring Boot, Maven
+
+Bash scripting, Linux
+
+Application development
+
+Professional Summary
+
+Experienced professional with over 10 years in software development and operations, holding an AWS Certified Developer Associate credential. Skilled in automating deployment and system configurations to ensure smooth integration and delivery processes. Able to leverage advanced cloud platform knowledge and scripting expertise to optimize operational efficiency. Excited about the opportunity to bring this wealth of experience to a new role as a DevOps Engineer, driving company growth through innovation and collaboration.
+
+Professional Certifications
+
+AWS DevOps Engineer, currently pursuing 
+AWS Certified Developer Associate, 2025 
+AWS Certified Cloud Practitioner, 2022 
+
+Work History
+
+January 2019 - Current
+
+JPMorgan Chase - Columbus, OH
+Application Support Analyst    
+
+Conducted root cause analysis on recurring incidents to identify opportunities for improvements in application design or support procedures. 
+Maintained strong relationships with stakeholders by providing exceptional service and communication throughout issue resolution process. 
+Collaborated with developers, analysts and project managers to expedite incident resolutions. 
+
+January 2018 - January 2019
+
+The Judge Group - Columbus, OH
+Java Application Developer    
+
+Streamlined codebase by refactoring legacy code, resulting in improved maintainability and reduced technical debt. 
+Boosted team collaboration by actively participating in daily stand-ups, sprint planning sessions, retrospectives, and code reviews. 
+
+January 2016 - January 2018
+
+Datapak Services - Howell, MI
+Application Developer    
+
+Created software applications in test-driven development environment.
+Developed and implemented personalized client solutions using programming language expertise.
+
+January 2013 - January 2016
+
+IBM - Lansing, MI
+Application Developer    
+
+Developed custom solutions for clients based on their unique business requirements and objectives.
+Managed project timelines and budgets, delivering quality applications within constraints.
+
+Education
+
+January 2013
+Wayne State University Detroit, MI
+Bachelor Degree Computer Science

@@ -4,7 +4,7 @@
 
 - 📫 Email me at: **msjackiebrown0503@gmail.com**
 
-- 📄 Download my resume: [http://www.github.com/msjackiebrown/resume](http://www.github.com/msjackiebrown/resume.txt)
+- 📄 Download my resume: [http://www.github.com/msjackiebrown/resume.txt](http://www.github.com/msjackiebrown/resume.txt)
 
 <h3 align="left"></h3>
 <ul>

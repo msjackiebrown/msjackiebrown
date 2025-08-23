@@ -1,27 +1,43 @@
-- 🌱 I’m currently learning  about **Cloud Development, DevOps In the Cloud, Serverless Functions, Machine Learning**
+# Hi there! 👋 I'm Jacqueline Brown
 
-- 💬 You can ask me questions about **java, devops, maven, vs code, git, aws, cloud computing, website design, spring boot, serverless design & computing**
+## 🚀 Java Developer (10+ years) → AWS Architecture Expert
 
-- 📫 Email me at: **msjackiebrown0503@gmail.com**
+**5 years development + 5 years production support** = Complete application lifecycle expertise. Currently pursuing **AWS Solutions Architect Associate** (Sept 2025) to combine development knowledge with architecture expertise.
 
-- 📄 Download my resume: [https://github.com/msjackiebrown/msjackiebrown/blob/main/resume.txt](https://github.com/msjackiebrown/msjackiebrown/blob/main/resume.txt)
+### 🎯 Career Evolution Journey
 
-<h3 align="left"></h3>
-<ul>
-  <li>Code Quality and Organization</li>
-  <li>DevOps Engineering</li>
-  <li>Cloud Computing</li>
-  <li>Machine Learning</li>
-</ul>
+- ✅ AWS Cloud Practitioner (2023) - building on 10 years Java foundation
+- ✅ AWS Developer Associate (2025) - combining dev + support experience
+- 🎯 AWS Solutions Architect Associate (Sept 2025) - advancing to architecture
+- 🚀 AWS DevOps Engineer Professional (Dec 2025) - complete expertise
+- 🌟 AI/ML Specialization (2026) - future innovation
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/msjackiebrown" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="msjackiebrown" height="30" width="40" /></a>
-<a href="https://www.youtube.com/@msjackiebrown" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="msjackiebrown" height="30" width="40" /></a>
-<a href="https://www.hackerrank.com/msjackiebrown" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="msjackiebrown" height="30" width="40" /></a>
-<a href="https://www.leetcode.com/msjackiebrown" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="msjackiebrown" height="30" width="40" /></a>
-<a href="https://www.topcoder.com/members/msjackiebrown" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/topcoder.svg" alt="msjackiebrown" height="30" width="40" /></a>
-</p>
+### 🛠️ Technical Expertise (Full Lifecycle)
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.jenkins.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.oracle.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.selenium.dev" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="selenium" width="40" height="40"/> </a> </p>
+- **Languages**: Java (10+ years), SQL, JavaScript
+- **Development**: Spring Boot, microservices, enterprise applications (5 years)
+- **Production Support**: Performance optimization, troubleshooting, reliability (5 years)
+- **AWS Services**: CloudWatch, EC2, RDS, Lambda (both dev and ops perspective)
+- **Architecture**: Understanding systems from development through production operations
+
+### 🌟 Unique Value Proposition
+
+- **Rare Combination**: Developer who deeply understands production realities
+- **Complete Perspective**: Building applications AND supporting them in production
+- **Real-World Architecture**: Design decisions based on actual failure patterns
+- **Performance Focus**: Optimizing from both development and operational viewpoints
+
+### 📊 GitHub Stats
+
+![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=msjackiebrown&show_icons=true&theme=radical)
+
+### 🔗 Connect With Me
+
+- 🌐 [Portfolio](https://yourportfolio.com)
+- 📧 [Contact Me via LinkedIn](https://linkedin.com/in/msjackiebrown)
+
+### 🎓 Sharing Complete Lifecycle Knowledge
+
+I share insights about Java development, production operations, and AWS architecture - helping others understand the complete application lifecycle from code to production.
+
+#JavaDeveloper #AWSCertified #FullStackExperience #ProductionExpertise #CloudArchitecture

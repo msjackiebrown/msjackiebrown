@@ -6,11 +6,10 @@
 
 ### 🎯 Career Evolution Journey
 
-- ✅ AWS Cloud Practitioner (2023) - building on 10 years Java foundation
-- ✅ AWS Developer Associate (2025) - combining dev + support experience
-- 🎯 AWS Solutions Architect Associate (Sept 2025) - advancing to architecture
-- 🚀 AWS DevOps Engineer Professional (Dec 2025) - complete expertise
-- 🌟 AI/ML Specialization (2026) - future innovation
+✅ AWS Developer Associate (2025) - combining dev + support experience
+� AWS Solutions Architect Associate (Oct 2025, anticipated pass) - exam taken, awaiting results, advancing to architecture
+🚀 AWS DevOps Engineer Professional (Dec 2025) - complete expertise
+🌟 AI/ML Specialization (2026) - future innovation
 
 ### 🛠️ Technical Expertise (Full Lifecycle)
 

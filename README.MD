@@ -1,64 +1,82 @@
-# Hi t### 🎯 Career Evolution Journey
-
-- ✅ **AWS Cloud Practitioner** (2023) - Building on 10 years Java foundation
-- ✅ **AWS Developer Associate** (2025) - Combining dev + support experience
-- 🎉 **AWS Solutions Architect Associate** (Oct 2025) - Exam completed, awaiting results
-- 🚀 **AWS DevOps Engineer Professional** (Dec 2025) - Complete expertise target
-- 🌟 **AI/ML Specialization** (2026) - Future innovation focus👋 I'm Jacqueline Brown
+# Hi there! 👋 I'm Jacqueline Brown
 
 ## 🚀 Java Developer (10+ years) → AWS Architecture Expert
 
-**5 years development + 5 years production support** = Complete application lifecycle expertise.
+**5 years development + 5 years production support** = Complete application lifecycle expertise
 
-Recently completed **AWS Solutions Architect Associate** exam (October 2025) to combine development knowledge with architecture expertise.
-
-### 🎯 Career Evolution Journey
-
-✅ AWS Developer Associate (2025) - combining dev + support experience
-� AWS Solutions Architect Associate (Oct 2025, anticipated pass) - exam taken, awaiting results, advancing to architecture
-🚀 AWS DevOps Engineer Professional (Dec 2025) - complete expertise
-🌟 AI/ML Specialization (2026) - future innovation
-
-### 🛠️ Technical Expertise
-
-**Core Technologies:**
-
-- **Languages:** Java (10+ years), SQL, JavaScript
-- **Frameworks:** Spring Boot, Microservices Architecture
-- **Cloud Platform:** AWS (CloudWatch, EC2, RDS, Lambda)
-
-**Experience Areas:**
-
-- **Development:** Enterprise applications, microservices (5 years)
-- **Production Support:** Performance optimization, troubleshooting, reliability (5 years)
-- **Architecture:** End-to-end system design from development through operations
-
-### 🌟 What Sets Me Apart
-
-🔹 **Rare Combination:** Developer who deeply understands production realities  
-🔹 **Complete Perspective:** Experience building applications AND supporting them in production  
-🔹 **Real-World Architecture:** Design decisions based on actual failure patterns and operational experience  
-🔹 **Performance Focus:** Optimizing systems from both development and operational viewpoints
-
-### 📊 GitHub Stats
-
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=msjackiebrown&show_icons=true&theme=radical)
-
-### 🔗 Let's Connect
-
-- 💼 **[LinkedIn](https://linkedin.com/in/msjackiebrown)** - Professional networking & contact
-- 🌐 **[Portfolio](https://yourportfolio.com)** - Project showcase & detailed experience
-
-### 🎓 Knowledge Sharing
-
-I share insights about:
-
-- ☕ **Java Development** - Enterprise application patterns and best practices
-- 🔧 **Production Operations** - Real-world troubleshooting and performance optimization
-- ☁️ **AWS Architecture** - Cloud solutions from a developer's perspective
-
-Helping others understand the complete application lifecycle from code to production.
+Currently pursuing **AWS Solutions Architect Associate** certification to combine development knowledge with architecture expertise.
 
 ---
 
-**Tags:** `#JavaDeveloper` `#AWSCertified` `#FullStackExperience` `#ProductionExpertise` `#CloudArchitecture`
+### 🎯 Career Evolution Journey
+
+| Status | Certification                         | Timeline | Focus                                                    |
+| ------ | ------------------------------------- | -------- | -------------------------------------------------------- |
+| ✅     | **AWS Developer Associate**           | 2025     | Combining dev + support experience                       |
+| 🎯     | **AWS Solutions Architect Associate** | Oct 2025 | Advancing to architecture (exam taken, awaiting results) |
+| 🚀     | **AWS DevOps Engineer Professional**  | Dec 2025 | Complete DevOps expertise                                |
+| 🌟     | **AI/ML Specialization**              | 2026     | Future innovation                                        |
+
+### 🛠️ Technical Expertise (Full Lifecycle)
+
+#### Programming & Development
+
+- **Languages**: Java (10+ years), SQL, JavaScript
+- **Frameworks**: Spring Boot, microservices architecture
+- **Applications**: Enterprise-grade applications (5 years)
+
+#### Production & Operations
+
+- **Support**: Performance optimization, troubleshooting, reliability engineering (5 years)
+- **Monitoring**: Real-time system health and performance analysis
+- **Optimization**: Database tuning, application performance improvements
+
+#### Cloud & Architecture
+
+- **AWS Services**: CloudWatch, EC2, RDS, Lambda (development + operations perspective)
+- **System Design**: End-to-end architecture from development through production
+- **Best Practices**: Design decisions based on real-world operational experience
+
+### 🌟 What Makes Me Different
+
+> **Rare Combination**: A developer who deeply understands production realities
+
+#### 🔄 Complete Application Lifecycle Experience
+
+- **Building** applications with production-ready mindset
+- **Supporting** them through real-world challenges
+- **Optimizing** performance from both dev and ops perspectives
+
+#### 🎯 Real-World Architecture Expertise
+
+- Design decisions informed by actual failure patterns
+- Performance optimization based on production data
+- Architecture that scales from code to operations
+
+### 📊 GitHub Activity
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=msjackiebrown&show_icons=true&theme=radical)
+
+---
+
+### 🤝 Let's Connect
+
+| Platform         | Link                                                     | Purpose                          |
+| ---------------- | -------------------------------------------------------- | -------------------------------- |
+| 🌐 **Portfolio** | [View My Work](https://yourportfolio.com)                | See my projects and case studies |
+| 💼 **LinkedIn**  | [Connect with Me](https://linkedin.com/in/msjackiebrown) | Professional networking          |
+
+### 🎓 Knowledge Sharing
+
+I actively share insights about:
+
+- **Java Development** best practices and patterns
+- **Production Operations** real-world challenges and solutions
+- **AWS Architecture** practical implementation strategies
+- **Complete Lifecycle** from development to production excellence
+
+---
+
+### 🏷️ Tags
+
+`#JavaDeveloper` `#AWSCertified` `#FullStackExperience` `#ProductionExpertise` `#CloudArchitecture`

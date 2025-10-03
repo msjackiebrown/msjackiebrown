@@ -1,70 +1,89 @@
 JACQUELINE D BROWN
+AWS Certified Solutions Architect Associate | Java Developer Transitioning to DevOps Engineering
 Columbus, OH 
 msjackiebrown0503@gmail.com
-WWW: linkedin.com/msjackiebrown
-WWW: github.com/msjackiebrown
+LinkedIn: linkedin.com/in/msjackiebrown
+GitHub: github.com/msjackiebrown
 
-Skills
+TECHNICAL SKILLS
 
-CI/CD Pipelines
+Cloud & Architecture
+• AWS Services: EC2, RDS, Lambda, VPC, CloudWatch, S3, IAM, DynamoDB, CloudFront
+• Architecture Patterns: Well-Architected Framework, microservices, serverless, high availability
+• Infrastructure: VPC design, security groups, auto scaling, load balancing
+• Cost Optimization: Resource rightsizing, reserved instances, architectural efficiency
 
-Jenkins, Docker
+Development & Programming
+• Languages: Java (10+ years), SQL, JavaScript, Bash scripting
+• Frameworks: Spring Boot, microservices architecture, RESTful APIs
+• Build Tools: Maven, Jenkins, Docker containerization
+• Development: Test-driven development, code reviews, enterprise applications
 
-AWS Lambda, ECS, Elastic Beanstalk
+Technology Support & Emerging DevOps Skills
+• Production Support: Performance optimization, troubleshooting, incident management (5+ years)
+• Monitoring: CloudWatch, application performance monitoring, log analysis
+• CI/CD Learning: Hands-on experience with Jenkins, AWS CodeCommit/CodeBuild/CodeDeploy
+• Automation: Bash scripting, exploring infrastructure as code concepts
+• Systems: Linux basics, eager to expand system administration skills
 
-Java, Spring Boot, Maven
+PROFESSIONAL SUMMARY
 
-Bash scripting, Linux
+AWS Certified Solutions Architect Associate transitioning to DevOps Engineering with 10+ years of foundational experience. Unique background combining 5 years of Java development with 5 years of technology support, providing comprehensive understanding of application lifecycle from development through production. Recently achieved AWS Solutions Architect certification (October 2025), building on Cloud Practitioner and Developer Associate credentials. Seeking entry-level DevOps Engineering role to leverage development experience, production support knowledge, and growing AWS expertise to bridge the gap between development and operations teams.
 
-Application development
+AWS CERTIFICATIONS
 
-Professional Summary
+AWS Certified Solutions Architect Associate - October 2025 ✓ PASSED
+• Well-Architected Framework expertise: Security, Reliability, Performance, Cost, Operational Excellence
+• Advanced VPC design, high availability patterns, disaster recovery planning
+• Cost optimization strategies and architectural trade-offs
 
-Experienced professional with over 10 years in software development and operations, holding an AWS Certified Developer Associate credential. Skilled in automating deployment and system configurations to ensure smooth integration and delivery processes. Able to leverage advanced cloud platform knowledge and scripting expertise to optimize operational efficiency. Excited about the opportunity to bring this wealth of experience to a new role as a DevOps Engineer, driving company growth through innovation and collaboration.
+AWS Certified Developer Associate - 2025 ✓ ACHIEVED  
+• AWS SDK integration with Java applications, Lambda serverless development
+• DynamoDB and RDS optimization, CloudWatch monitoring and debugging
+• CI/CD pipeline implementation with AWS native tools
 
-Professional Certifications
+AWS Certified Cloud Practitioner - 2024 ✓ FOUNDATION
+• AWS core services, cloud economics, security and compliance fundamentals
+• Cloud deployment models and architectural best practices
 
-AWS DevOps Engineer, currently pursuing 
-AWS Certified Developer Associate, 2025 
-AWS Certified Cloud Practitioner, 2022 
+Currently Pursuing: AWS DevOps Engineer Professional (Target: December 2025) 
 
-Work History
+PROFESSIONAL EXPERIENCE
 
-January 2019 - Current
+Application Support Analyst | JPMorgan Chase - Columbus, OH                    January 2019 - Present
+• Conduct comprehensive root cause analysis on production incidents, identifying ares of improvements
+• Maintain 99.5% SLA compliance through proactive monitoring and rapid incident response 
+• Lead cross-functional collaboration with development teams, project managers, and stakeholders to resolve critical production issues
 
-JPMorgan Chase - Columbus, OH
-Application Support Analyst    
+Java Application Developer (Contract) | The Judge Group - Columbus, OH           January 2018 - January 2019  
+Contract Assignment: JP Morgan Chase - Application Development Team
+• Collaborated with development team to build and maintain Java-based database application for financial services
+• Developed database-driven application using Java and SQL for data processing and reporting
+• Participated in Agile development processes including daily standups, sprint planning, and code reviews
+• Contributed to application enhancements and bug fixes while adhering to enterprise coding standards and security protocols
 
-Conducted root cause analysis on recurring incidents to identify opportunities for improvements in application design or support procedures. 
-Maintained strong relationships with stakeholders by providing exceptional service and communication throughout issue resolution process. 
-Collaborated with developers, analysts and project managers to expedite incident resolutions. 
+Application Developer | Datapak Services - Howell, MI                         January 2016 - January 2018
+• Designed and developed enterprise Java applications using test-driven development methodologies
+• Created customized client solutions leveraging Spring Framework and Maven build automation
+• Implemented robust error handling and logging mechanisms improving application reliability by 35%
+• Collaborated with business clients to translate complex requirements into scalable technical solutions
 
-January 2018 - January 2019
+Application Developer | IBM - Lansing, MI                                     January 2013 - January 2016
+• Developed custom enterprise solutions for Fortune 500 clients based on unique business requirements and objectives  
+• Successfully managed multiple concurrent projects, consistently delivering quality applications within budget and timeline constraints
+• Implemented Java-based solutions integrated with IBM middleware and database technologies
+• Mentored junior developers on best practices for enterprise application development
 
-The Judge Group - Columbus, OH
-Java Application Developer    
+EDUCATION
 
-Streamlined codebase by refactoring legacy code, resulting in improved maintainability and reduced technical debt. 
-Boosted team collaboration by actively participating in daily stand-ups, sprint planning sessions, retrospectives, and code reviews. 
+Bachelor of Science, Computer Science | Wayne State University, Detroit, MI                    2013
 
-January 2016 - January 2018
+KEY ACHIEVEMENTS & TRANSITION STRENGTHS
 
-Datapak Services - Howell, MI
-Application Developer    
-
-Created software applications in test-driven development environment.
-Developed and implemented personalized client solutions using programming language expertise.
-
-January 2013 - January 2016
-
-IBM - Lansing, MI
-Application Developer    
-
-Developed custom solutions for clients based on their unique business requirements and objectives.
-Managed project timelines and budgets, delivering quality applications within constraints.
-
-Education
-
-January 2013
-Wayne State University Detroit, MI
-Bachelor Degree Computer Science
+• Unique Background: Developer with deep production support experience - ideal foundation for DevOps
+• Complete Application Lifecycle Understanding: 5 years building applications + 5 years technology support
+• AWS Learning Journey: Systematic progression from Cloud Practitioner → Developer → Solutions Architect
+• Bridging Development & Operations: Experience from both sides of the application lifecycle
+• Problem-Solving Mindset: Production incident resolution skills transferable to DevOps automation
+• Continuous Learning: Actively pursuing AWS DevOps Engineer Professional certification (December 2025 target)
+• Entry-Level DevOps: Eager to apply development and support experience to infrastructure automation and CI/CD

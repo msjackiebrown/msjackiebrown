@@ -42,4 +42,12 @@ Interactive chatbot demonstrating real-time token streaming from local language 
 Previously spent seven years deep in production support—incident response, root cause analysis, and keeping critical systems stable under pressure. Now applying that operational rigor to active code creation in the AI space.
 
 ---
-*Self-hosted infrastructure portfolio and local-first research also available on [Gitea](https://dev.gitea.msjackiebrown.net/msjackiebrown).*
+
+### Portfolio & Content
+
+Building a cohesive professional brand across multiple platforms:
+
+- 🌐 **Portfolio**: [www.msjackiebrown.com](https://www.msjackiebrown.com) — Professional resume, case studies, and project documentation.
+- 💼 **LinkedIn**: [linkedin.com/in/msjackiebrown](https://linkedin.com/in/msjackiebrown) — Professional networking and industry insights.
+- 🎥 **YouTube**: [youtube.com/@msjackiebrown](https://youtube.com/@msjackiebrown) — Tutorials, project walkthroughs, and tech commentary.
+- ✍️ **Medium**: [medium.com/@msjackiebrown](https://medium.com/@msjackiebrown) — Technical articles on local AI, RAG architecture, and infrastructure engineering.

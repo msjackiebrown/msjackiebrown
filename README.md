@@ -1,122 +1,53 @@
-# Hi there! 👋 I'm Jacqueline Brown
+# Jacqueline Brown — msjackiebrown
 
-## 🚀 Java Developer (10+ years) → AWS Certified Architecture Expert
-
-**5 years development + 5 years production support** = Complete application lifecycle expertise
-
-**AWS Certified Solutions Architect Associate** ✅ - Successfully combining development knowledge with architecture expertise!
-
-### 🏆 AWS Certifications
-
-<div align="center">
-
-<a href="https://www.credly.com/badges/cf37294e-c51e-4fbd-97b3-1682ac4b0ade/public_url">
-  <img src="https://images.credly.com/size/120x120/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner" width="120" height="120"/>
-</a>
-<a href="https://www.credly.com/badges/5756c6a5-2210-4a37-9886-2a10915cf550/public_url">
-  <img src="https://images.credly.com/size/120x120/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer Associate" width="120" height="120"/>
-</a>
-<a href="https://www.credly.com/badges/934cdaac-e615-4dd9-927c-442747b31d6e/public_url">
-  <img src="https://images.credly.com/size/120x120/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect Associate" width="120" height="120"/>
-</a>
-
-</div>
+Infrastructure engineer turned AI developer. Building local-first, self-hosted Python applications for AI inference, RAG pipelines, and generative automation.
 
 ---
 
-### 🎯 Career Evolution Journey
+## Professional Summary
 
-| Status | Certification                         | Timeline | Focus                                          |
-| ------ | ------------------------------------- | -------- | ---------------------------------------------- |
-| ✅     | **AWS Cloud Practitioner**            | 2024     | Foundation: Cloud concepts & AWS fundamentals  |
-| ✅     | **AWS Developer Associate**           | 2025     | Combining dev + support experience             |
-| ✅     | **AWS Solutions Architect Associate** | Oct 2025 | ✨ **PASSED!** Architecture expertise achieved |
-| 🎯     | **AWS DevOps Engineer Professional**  | Dec 2025 | Next: Complete DevOps expertise                |
-| 🌟     | **AI/ML Specialization**              | 2026     | Future innovation                              |
+15+ years in IT infrastructure, production support, and AWS architecture. Transitioning deep operational discipline into active Python development with a focus on Retrieval-Augmented Generation (RAG) and local LLM orchestration. 
 
-### 🛠️ Technical Expertise (Full Lifecycle)
+Previously focused on enterprise Java and AWS certification (Solutions Architect Associate / Developer Associate). Currently rebuilding active coding muscle around LangChain, Docker containerization, and vector databases for AI roles.
 
-#### Programming & Development
+## Technical Skills
 
-- **Languages**: Java (10+ years), SQL, JavaScript
-- **Frameworks**: Spring Boot, microservices architecture
-- **Applications**: Enterprise-grade applications (5 years)
+| Category | Technologies & Tools |
+| :--- | :--- |
+| **Languages** | Python (Primary focus), Java, SQL, Bash |
+| **AI & RAG** | LangChain, Ollama, Vector DBs (Qdrant), Embeddings, LLM orchestration |
+| **Infrastructure** | Docker & Compose, Linux, AWS (EC2, Lambda, S3, VPC) |
+| **DevOps & Data** | CI/CD Pipelines, Pandas, FastAPI, Pydantic |
 
-#### Production & Operations
+## Featured Projects
 
-- **Support**: Performance optimization, troubleshooting, reliability engineering (5 years)
-- **Monitoring**: Real-time system health and performance analysis
-- **Optimization**: Database tuning, application performance improvements
+### [Binder](https://github.com/msjackiebrown/binder) — Personal RAG Application
+A local-first RAG application designed to run entirely on consumer hardware. Users ingest their own documents (PDFs, Markdown), store knowledge locally via vector embeddings, and chat with them using open-weight models. No cloud dependencies; data never leaves the local network.
+*Tech: Python, LangChain, Qdrant, Ollama*
 
-#### 🌩️ AWS Expertise by Certification Level
+### [python-mcp-server](https://github.com/msjackiebrown/python-mcp-server) — AI Agent Tooling
+A beginner-friendly Model Context Protocol (MCP) server built in Python that helps AI agents find shared solutions for coding challenges. Demonstrates understanding of modern agent tool-calling and API architecture.
+*Tech: Python, FastAPI, MCP Protocol*
 
-**☁️ Cloud Practitioner Foundation**
+### [python-llm-powered-chatbot](https://github.com/msjackiebrown/python-llm-powered-chatbot) — Local LLM Streaming
+Interactive chatbot demonstrating real-time token streaming from local language models via the Ollama API. Features conversation history management and thinking process visualization with comprehensive test coverage.
+*Tech: Python, Ollama API, Async Streaming, PyTest*
 
-- AWS Core services understanding (EC2, S3, RDS, VPC)
-- Cloud economics, billing, and cost optimization fundamentals
-- Security and compliance basics in AWS
-- Cloud deployment models and service categories
+## Background & Certifications
 
-**⚡ Developer Associate Skills**
+- **AWS Certified Solutions Architect Associate** (2025) 
+- **AWS Certified Developer Associate** (2025)
+- **BS Computer Science**, Wayne State University
 
-- AWS SDK integration with Java applications
-- Lambda serverless development and event-driven architecture
-- DynamoDB, RDS database integration and optimization
-- CloudWatch monitoring, logging, and application debugging
-- S3 advanced features, CloudFront CDN implementation
-- CodeCommit, CodeBuild, CodeDeploy CI/CD pipelines
-
-**🏗️ Solutions Architect Associate Expertise** ⭐ _Recently Achieved_
-
-- Well-Architected Framework: Security, Reliability, Performance, Cost, Operational Excellence
-- VPC design, subnets, routing, security groups, NACLs
-- High availability and disaster recovery patterns
-- Auto Scaling, Load Balancing, and fault-tolerant architectures
-- IAM advanced policies, roles, and cross-account access
-- Cost optimization strategies and architectural trade-offs
-
-### 🌟 What Makes Me Different
-
-> **Rare Combination**: A developer who deeply understands production realities
-
-#### 🔄 Complete Application Lifecycle Experience
-
-- **Building** applications with production-ready mindset
-- **Supporting** them through real-world challenges
-- **Optimizing** performance from both dev and ops perspectives
-
-#### 🎯 Real-World Architecture Expertise
-
-- Design decisions informed by actual failure patterns
-- Performance optimization based on production data
-- Architecture that scales from code to operations
-
-### 📊 GitHub Activity
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=msjackiebrown&show_icons=true&theme=radical)
+Previously spent seven years deep in production support—incident response, root cause analysis, and keeping critical systems stable under pressure. Now applying that operational rigor to active code creation in the AI space.
 
 ---
 
-### 🤝 Let's Connect
+### Portfolio & Content
 
-| Platform         | Link                                                     | Purpose                          |
-| ---------------- | -------------------------------------------------------- | -------------------------------- |
-| 🌐 **Portfolio** | [View My Work](https://yourportfolio.com)                | See my projects and case studies |
-| 💼 **LinkedIn**  | [Connect with Me](https://linkedin.com/in/msjackiebrown) | Professional networking          |
+Building a cohesive professional brand across multiple platforms:
 
-### 🎓 Knowledge Sharing
-
-I actively share insights about:
-
-- **Java Development** best practices and enterprise patterns
-- **Production Operations** real-world challenges and solutions
-- **AWS Cloud Journey** from practitioner fundamentals to architect-level design
-- **Serverless Development** Lambda, API Gateway, and event-driven architectures
-- **Well-Architected Solutions** security, scalability, and cost optimization
-- **Complete Lifecycle** from development to production excellence
-
----
-
-### 🏷️ Tags
-
-`#JavaDeveloper` `#AWSCertified` `#FullStackExperience` `#ProductionExpertise` `#CloudArchitecture`
+- 🌐 **Portfolio**: [www.msjackiebrown.com](https://www.msjackiebrown.com) — Professional resume, case studies, and project documentation.
+- 💼 **LinkedIn**: [linkedin.com/in/msjackiebrown](https://linkedin.com/in/msjackiebrown) — Professional networking and industry insights.
+- 🎥 **YouTube**: [youtube.com/@msjackiebrown](https://youtube.com/@msjackiebrown) — Tutorials, project walkthroughs, and tech commentary.
+- ✍️ **Medium**: [medium.com/@msjackiebrown](https://medium.com/@msjackiebrown) — Technical articles on local AI, RAG architecture, and infrastructure engineering.

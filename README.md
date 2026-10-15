@@ -15,7 +15,7 @@ Previously focused on enterprise Java and AWS certification (Solutions Architect
 | Category | Technologies & Tools |
 | :--- | :--- |
 | **Languages** | Python (Primary focus), Java, SQL, Bash |
-| **AI & RAG** | LangChain, Ollama, Vector DBs (Qdrant), Embeddings, LLM orchestration |
+| **AI & RAG** | LangChain, Ollama, Vector DBs (Qdrant/ChromaDB), Embeddings, LLM orchestration |
 | **Infrastructure** | Docker & Compose, Linux, AWS (EC2, Lambda, S3, VPC) |
 | **DevOps & Data** | CI/CD Pipelines, Pandas, FastAPI, Pydantic |
 
@@ -23,7 +23,11 @@ Previously focused on enterprise Java and AWS certification (Solutions Architect
 
 ### [Binder](https://github.com/msjackiebrown/binder) — Personal RAG Application
 A local-first RAG application designed to run entirely on consumer hardware. Users ingest their own documents (PDFs, Markdown), store knowledge locally via vector embeddings, and chat with them using open-weight models. No cloud dependencies; data never leaves the local network.
-*Tech: Python, LangChain, Qdrant, Ollama*
+*Tech: Python, LangChain, ChromaDB, Ollama, FastAPI*
+
+### [python-sre-agent](https://github.com/msjackiebrown/python-sre-agent) — Local AI SRE Agent
+An agentic AI system using the ReAct pattern to troubleshoot operational incidents by grounding LLM responses in real tool outputs and local runbook data. Features Pydantic validation, 23 passing tests, and a Streamlit UI, demonstrating safe, deterministic tool calling without cloud dependencies.
+*Tech: Python, Ollama API, ChromaDB, Pydantic, Streamlit, ReAct Pattern*
 
 ### [python-mcp-server](https://github.com/msjackiebrown/python-mcp-server) — AI Agent Tooling
 A beginner-friendly Model Context Protocol (MCP) server built in Python that helps AI agents find shared solutions for coding challenges. Demonstrates understanding of modern agent tool-calling and API architecture.
@@ -47,7 +51,7 @@ Previously spent seven years deep in production support—incident response, roo
 
 Building a cohesive professional brand across multiple platforms:
 
-- 🌐 **Portfolio**: [www.msjackiebrown.com](https://www.msjackiebrown.com) — Professional resume, case studies, and project documentation.
-- 💼 **LinkedIn**: [linkedin.com/in/msjackiebrown](https://linkedin.com/in/msjackiebrown) — Professional networking and industry insights.
-- 🎥 **YouTube**: [youtube.com/@msjackiebrown](https://youtube.com/@msjackiebrown) — Tutorials, project walkthroughs, and tech commentary.
-- ✍️ **Medium**: [medium.com/@msjackiebrown](https://medium.com/@msjackiebrown) — Technical articles on local AI, RAG architecture, and infrastructure engineering.
+- **Portfolio**: www.msjackiebrown.com — Professional resume, case studies, and project documentation.
+- **LinkedIn**: linkedin.com/in/msjackiebrown — Professional networking and industry insights.
+- **YouTube**: youtube.com/@msjackiebrown — Tutorials, project walkthroughs, and tech commentary.
+- **Medium**: medium.com/@msjackiebrown — Technical articles on local AI, RAG architecture, and infrastructure engineering.

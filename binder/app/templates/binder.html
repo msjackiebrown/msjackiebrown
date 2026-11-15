@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ binder.title }} — Binder{% endblock %}
+{% block body_class %}binder-page{% endblock %}
+
+{% block content %}
+    <!-- Global Top Bar -->
+    <nav class="top-bar">
+        <div class="container-fluid">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <a href="{{ url_for('home.index') }}" class="shelf-link">← Shelf</a>
+                </div>
+                <div class="top-bar-center">
+                    <div class="ollama-status">
+                        <span class="status-dot online"></span>
+                        <span class="status-text">Ollama: qwen3:14b</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="{{ url_for('settings.view_settings') }}" class="settings-link" title="Settings">⚙ Settings</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content - Two Pane Layout -->
+    <main class="binder-main">
+        <!-- Left Pane: Sources & Sections -->
+        <aside class="sources-pane">
+            <!-- Binder Header -->
+            <div class="binder-header">
+                <h2 id="binder-title" class="binder-title">📓 {{ binder.title }}</h2>
+                <p id="binder-desc" class="binder-description">{{ binder.description }}</p>
+                <div class="binder-stats">
+                    <span id="source-count">{{ binder.sources|length }} sources</span>
+                </div>
+            </div>
+
+            <!-- Sources Section -->
+            <div class="sources-section">
+                <div class="sources-header">
+                    <h3>SOURCES</h3>
+                    <button class="btn btn-sm btn-link" id="add-source-btn" title="Add a new source">+ Add</button>
+                </div>
+
+                <!-- Sources Tree -->
+                <div id="sources-tree" class="sources-tree">
+                    {% for source in binder.sources %}
+                        <div class="source-item status-{{ source.status }}" data-source-id="{{ source.id }}">
+                            <span>
+                                {% if source.source_type == 'file' %}📄
+                                {% elif source.source_type == 'url' %}🔗
+                                {% else %}▤
+                                {% endif %}
+                                {{ source.title }}
+                            </span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Pane: Chat -->
+        <section class="chat-pane">
+            <!-- Conversation Header -->
+            <div class="chat-header">
+                <span class="conversation-info">Conversation <span id="current-convo">1</span> of <span id="total-convo">{{ conversations|length }}</span></span>
+                <div class="chat-actions">
+                    <button class="btn btn-sm btn-primary" id="new-chat-btn">+ New Chat</button>
+                    <button class="btn btn-sm btn-link text-danger" id="delete-chat-btn">🗑</button>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="messages-container" class="messages-container">
+                <!-- Messages populated by JavaScript -->
+            </div>
+
+            <!-- Chat Footer: Composer -->
+            <div class="chat-footer">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="message-input" placeholder="Ask about your sources…" aria-label="Ask about your sources">
+                    <button class="btn btn-primary" id="send-btn" type="button">➤ Send</button>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        const binderData = {
+            id: '{{ binder.id }}',
+            title: '{{ binder.title }}',
+            description: '{{ binder.description }}',
+            sources: {{ binder.sources|tojson }},
+            conversations: {{ conversations|tojson }}
+        };
+    </script>
+    <script src="{{ url_for('static', filename='js/binder.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Settings — Binder{% endblock %}
+{% block body_class %}settings-page{% endblock %}
+
+{% block content %}
+    <!-- Global Top Bar -->
+    <nav class="top-bar">
+        <div class="container-fluid">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <a href="{{ url_for('home.index') }}" class="shelf-link">← Shelf</a>
+                </div>
+                <div class="top-bar-center">
+                    <span class="binder-brand">⚙ SETTINGS</span>
+                </div>
+                <div class="top-bar-right"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="settings-main">
+        <div class="settings-container">
+            <h1>Settings</h1>
+
+            <!-- Models Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Models</h2>
+                    <button class="btn btn-link btn-sm" id="reset-models">reset to default</button>
+                </div>
+                <form id="models-form">
+                    <div class="mb-3">
+                        <label for="llm-primary" class="form-label">LLM Primary</label>
+                        <input type="text" class="form-control" id="llm-primary" value="{{ settings.models.llm_primary }}">
+                        <small class="text-muted">Primary language model for generation</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="llm-quality" class="form-label">LLM Quality Mode</label>
+                        <input type="text" class="form-control" id="llm-quality" value="{{ settings.models.llm_quality }}">
+                        <small class="text-muted">Larger model for Learning Guide mode</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="embedding-model" class="form-label">Embedding Model</label>
+                        <input type="text" class="form-control" id="embedding-model" value="{{ settings.models.embedding_model }}">
+                        <small class="text-muted">⚠ Changing this orphans existing collections. All binders must be re-ingested after save.</small>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Retrieval Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Retrieval</h2>
+                    <button class="btn btn-link btn-sm" id="reset-retrieval">reset to default</button>
+                </div>
+                <form id="retrieval-form">
+                    <div class="mb-3">
+                        <label for="top-k" class="form-label">Top K Results</label>
+                        <input type="number" class="form-control" id="top-k" min="3" max="10" value="{{ settings.retrieval.top_k }}">
+                        <small class="text-muted">Number of sources to retrieve (3–10)</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="chunk-size" class="form-label">Chunk Size</label>
+                        <input type="number" class="form-control" id="chunk-size" value="{{ settings.retrieval.chunk_size }}">
+                        <small class="text-muted">Characters per chunk for embedding</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="chunk-overlap" class="form-label">Chunk Overlap</label>
+                        <input type="number" class="form-control" id="chunk-overlap" value="{{ settings.retrieval.chunk_overlap }}">
+                        <small class="text-muted">Characters of overlap between chunks</small>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Servers & Paths Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Servers & Paths</h2>
+                    <button class="btn btn-link btn-sm" id="reset-servers">reset to default</button>
+                </div>
+                <form id="servers-form">
+                    <div class="mb-3">
+                        <label for="ollama-url" class="form-label">Ollama Base URL</label>
+                        <input type="url" class="form-control" id="ollama-url" value="{{ settings.servers.ollama_url }}">
+                        <small class="text-muted">Base URL for Ollama API</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bind-address" class="form-label">Bind Address</label>
+                        <input type="text" class="form-control" id="bind-address" value="{{ settings.servers.bind_address }}">
+                        <small class="text-muted">Network interface to bind to (127.0.0.1 = localhost only)</small>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Save Button -->
+            <div class="settings-actions">
+                <button class="btn btn-secondary" id="cancel-btn">Cancel</button>
+                <button class="btn btn-primary" id="save-btn">Save Settings</button>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        const settings = {{ settings|tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+{% endblock %}

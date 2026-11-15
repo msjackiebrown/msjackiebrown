@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binder — Bookshelf</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body class="bookshelf-page">
+    <!-- Global Top Bar -->
+    <nav class="top-bar">
+        <div class="container-fluid">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span class="binder-brand">🔖 BINDER</span>
+                </div>
+                <div class="top-bar-center">
+                    <div class="ollama-status">
+                        <span class="status-dot online"></span>
+                        <span class="status-text">Ollama: qwen3:14b</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="settings.html" class="settings-link" title="Settings">⚙ Settings</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ollama Down Banner (hidden by default) -->
+    <div id="ollama-banner" class="ollama-banner alert alert-warning mb-0 d-none">
+        <div class="container-fluid">
+            <div class="banner-content">
+                <span>⚠ Ollama unreachable at ai-lab:11434 — generation and new ingestion are paused. Your data is safe.</span>
+                <div class="banner-actions">
+                    <button class="btn btn-sm btn-outline-warning" id="retry-btn">Retry</button>
+                    <button class="btn btn-sm btn-link text-warning" id="dismiss-banner">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="bookshelf-main">
+        <div class="shelf-container">
+            <!-- Shelf Label and CTA -->
+            <div class="shelf-header">
+                <h1 class="shelf-title">M Y   B I N D E R S</h1>
+                <button class="btn btn-primary btn-sm" id="new-binder-btn">+ New Binder</button>
+            </div>
+
+            <!-- Empty State (shown when no binders) -->
+            <div id="empty-state" class="empty-state d-none">
+                <div class="empty-state-content">
+                    <h2>Your shelf is empty.</h2>
+                    <p>What are you studying first?</p>
+                    <button class="btn btn-primary" id="empty-create-btn">+ Create your first binder</button>
+                </div>
+            </div>
+
+            <!-- Bookshelf with Shelves -->
+            <div id="bookshelf" class="bookshelf">
+                <!-- Shelves are generated here by JavaScript -->
+            </div>
+
+            <!-- Pagination / More Binders -->
+            <div id="shelf-pagination" class="shelf-pagination d-none">
+                <button class="btn btn-link">View all X →</button>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="shelf-bottom-actions">
+                <button class="btn btn-ghost" id="bottom-new-binder-btn">+ New Binder</button>
+                <span class="shelf-counter">shelf: 1 of 3</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Binder Modal -->
+    <div class="modal fade" id="newBinderModal" tabindex="-1" aria-labelledby="newBinderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newBinderModalLabel">Create a New Binder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newBinderForm">
+                        <div class="mb-3">
+                            <label for="binderName" class="form-label">Binder Name *</label>
+                            <input type="text" class="form-control" id="binderName" required placeholder="e.g., Chapter 4, PARA System">
+                        </div>
+                        <div class="mb-3">
+                            <label for="binderDesc" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="binderDesc" placeholder="One line description (optional)">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="createBinderBtn">Create Binder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rename Binder Modal -->
+    <div class="modal fade" id="renameBinderModal" tabindex="-1" aria-labelledby="renameBinderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="renameBinderModalLabel">Rename Binder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="renameBinderForm">
+                        <div class="mb-3">
+                            <label for="newBinderName" class="form-label">New Name</label>
+                            <input type="text" class="form-control" id="newBinderName" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmRenameBtn">Rename</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Binder Modal -->
+    <div class="modal fade" id="deleteBinderModal" tabindex="-1" aria-labelledby="deleteBinderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteBinderModalLabel">Delete Binder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="deleteWarning"></p>
+                    <form id="deleteBinderForm">
+                        <div class="mb-3">
+                            <label for="confirmDelete" class="form-label">Type the binder name to confirm:</label>
+                            <input type="text" class="form-control" id="confirmDelete" placeholder="Type to confirm deletion">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn" disabled>Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu (right-click) -->
+    <div id="contextMenu" class="context-menu d-none">
+        <button class="context-menu-item" data-action="open">Open</button>
+        <button class="context-menu-item" data-action="rename">Rename</button>
+        <button class="context-menu-item text-danger" data-action="delete">Delete</button>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="bookshelf.js"></script>
+</body>
+</html>

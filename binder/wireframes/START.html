@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binder Wireframes — Navigation Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --binder-accent: #4A90D9;
+            --binder-bg: #FAF8F4;
+        }
+        
+        body {
+            background-color: var(--binder-bg);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hub-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+        
+        .hub-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hub-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--binder-accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .hub-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .page-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 200ms;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid #f0f0f0;
+        }
+        
+        .page-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-color: var(--binder-accent);
+            transform: translateY(-4px);
+        }
+        
+        .page-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .page-features {
+            text-align: left;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: #fafafa;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .page-features li {
+            color: #666;
+            margin-bottom: 4px;
+        }
+        
+        .btn-visit {
+            background-color: var(--binder-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 200ms;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        
+        .btn-visit:hover {
+            background-color: #2e5fa3;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .docs-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .docs-section h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .docs-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .doc-link {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--binder-accent);
+            color: var(--binder-accent);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 200ms;
+        }
+        
+        .doc-link:hover {
+            background-color: var(--binder-accent);
+            color: white;
+        }
+        
+        .tech-stack {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-stack h4 {
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .tech-badge {
+            background-color: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="hub-container">
+        <div class="hub-header">
+            <h1>🔖 Binder Wireframes</h1>
+            <p>Complete HTML/CSS/JavaScript Implementation</p>
+        </div>
+
+        <div class="pages-grid">
+            <!-- Home Page -->
+            <a href="index.html" class="page-card">
+                <div class="page-icon">📚</div>
+                <h2>Home — Bookshelf</h2>
+                <p>The main shelf view where users see all their binders as physical book spines.</p>
+                <ul class="page-features">
+                    <li>✓ Grid of book spines</li>
+                    <li>✓ Color-coded statuses</li>
+                    <li>✓ Create/Rename/Delete</li>
+                    <li>✓ Context menus</li>
+                </ul>
+                <button class="btn-visit">Open Home Page →</button>
+            </a>
+
+            <!-- Binder Page -->
+            <a href="binder.html" class="page-card">
+                <div class="page-icon">💬</div>
+                <h2>Inside a Binder</h2>
+                <p>Two-pane workspace with sources tree and chat interface for interactive learning.</p>
+                <ul class="page-features">
+                    <li>✓ Sources management</li>
+                    <li>✓ Chat interface</li>
+                    <li>✓ Citations system</li>
+                    <li>✓ Composer tabs</li>
+                </ul>
+                <button class="btn-visit">Open Binder →</button>
+            </a>
+
+            <!-- Settings Page -->
+            <a href="settings.html" class="page-card">
+                <div class="page-icon">⚙️</div>
+                <h2>Settings</h2>
+                <p>Configuration panel for models, retrieval settings, and server information.</p>
+                <ul class="page-features">
+                    <li>✓ Model config</li>
+                    <li>✓ Retrieval settings</li>
+                    <li>✓ Server URLs</li>
+                    <li>✓ Ollama status</li>
+                </ul>
+                <button class="btn-visit">Open Settings →</button>
+            </a>
+        </div>
+
+        <!-- Documentation Section -->
+        <div class="docs-section">
+            <h3>📚 Documentation</h3>
+            <div class="docs-links">
+                <a href="QUICKSTART.md" class="doc-link" target="_blank">Quick Start Guide</a>
+                <a href="README.md" class="doc-link" target="_blank">Full README</a>
+                <a href="../docs/Binder%20-%20Blueprint%20-%20Wireframe%20Spec.md" class="doc-link" target="_blank">Wireframe Spec</a>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+            <h4>🔧 Built With</h4>
+            <div class="tech-list">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript (Vanilla)</span>
+                <span class="tech-badge">Bootstrap 5</span>
+            </div>
+            <p style="margin-top: 1rem; color: #999; text-align: center; font-size: 0.9rem;">
+                No build step, no frameworks — just open and go! 🚀
+            </p>
+        </div>
+    </div>
+</body>
+</html>

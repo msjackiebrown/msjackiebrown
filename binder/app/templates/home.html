@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% block title %}Binder — Bookshelf{% endblock %}
+{% block body_class %}bookshelf-page{% endblock %}
+
+{% block content %}
+    <!-- Global Top Bar -->
+    <nav class="top-bar">
+        <div class="container-fluid">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span class="binder-brand">🔖 BINDER</span>
+                </div>
+                <div class="top-bar-center">
+                    <div class="ollama-status">
+                        <span class="status-dot online"></span>
+                        <span class="status-text">Ollama: qwen3:14b</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="{{ url_for('settings.view_settings') }}" class="settings-link" title="Settings">⚙ Settings</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ollama Down Banner -->
+    <div id="ollama-banner" class="ollama-banner alert alert-warning mb-0 d-none">
+        <div class="container-fluid">
+            <div class="banner-content">
+                <span>⚠ Ollama unreachable at localhost:11434 — generation and new ingestion are paused. Your data is safe.</span>
+                <div class="banner-actions">
+                    <button class="btn btn-sm btn-outline-warning" id="retry-btn">Retry</button>
+                    <button class="btn btn-sm btn-link text-warning" id="dismiss-banner">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="binders-main">
+        <div class="binders-container">
+            <!-- Header Section -->
+            <div class="binders-header">
+                <div class="header-left">
+                    <h1 class="binders-title">My Binders</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-primary" id="new-binder-btn">+ New Binder</button>
+                </div>
+            </div>
+
+            <!-- Empty State (shown when no binders) -->
+            <div id="empty-state" class="empty-state {% if binders %}d-none{% endif %}">
+                <div class="empty-state-content">
+                    <h2>Your binder collection is empty.</h2>
+                    <p>Start organizing your knowledge base.</p>
+                    <button class="btn btn-primary btn-lg" id="empty-create-btn">+ Create your first binder</button>
+                </div>
+            </div>
+
+            <!-- Binders List View -->
+            <div id="binders-listview" class="binders-listview {% if not binders %}d-none{% endif %}">
+                <div class="list-header">
+                    <div class="col-name">Name</div>
+                    <div class="col-description">Description</div>
+                    <div class="col-sources">Sources</div>
+                    <div class="col-dates">Created</div>
+                    <div class="col-modified">Modified</div>
+                    <div class="col-actions">Actions</div>
+                </div>
+                
+                <div id="binders-list" class="list-items">
+                    {% for binder in binders %}
+                        <div class="list-item status-{{ binder.status }}" data-binder-id="{{ binder.id }}">
+                            <div class="col-name">
+                                <span class="status-indicator"></span>
+                                <span class="binder-name">{{ binder.title }}</span>
+                            </div>
+                            <div class="col-description">
+                                <span class="binder-desc">{{ binder.description or '—' }}</span>
+                            </div>
+                            <div class="col-sources">
+                                <span class="source-badge">📄 {{ binder.source_count }}</span>
+                            </div>
+                            <div class="col-dates">
+                                <span class="binder-created">{{ binder.created_at.strftime('%b %d, %Y') if binder.created_at else '—' }}</span>
+                            </div>
+                            <div class="col-modified">
+                                <span class="binder-modified">{{ binder.updated_at.strftime('%b %d, %Y') if binder.updated_at else '—' }}</span>
+                            </div>
+                            <div class="col-actions">
+                                <button class="btn-action btn-open" title="Open" data-action="open">📖</button>
+                                <button class="btn-action btn-rename" title="Rename" data-action="rename">✏</button>
+                                <button class="btn-action btn-delete text-danger" title="Delete" data-action="delete">🗑</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Stats Footer -->
+            <div id="binders-footer" class="binders-footer {% if not binders %}d-none{% endif %}">
+                <span class="binder-count"><strong id="count">{{ binders|length }}</strong> binder{{ 's' if binders|length != 1 else '' }}</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Binder Modal -->
+    <div class="modal fade" id="newBinderModal" tabindex="-1" aria-labelledby="newBinderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newBinderModalLabel">Create a New Binder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newBinderForm">
+                        <div class="mb-3">
+                            <label for="binderName" class="form-label">Binder Name *</label>
+                            <input type="text" class="form-control" id="binderName" required placeholder="e.g., Chapter 4, PARA System">
+                        </div>
+                        <div class="mb-3">
+                            <label for="binderDesc" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="binderDesc" placeholder="One line description (optional)">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="createBinderBtn">Create Binder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rename Binder Modal -->
+    <div class="modal fade" id="renameBinderModal" tabindex="-1" aria-labelledby="renameBinderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="renameBinderModalLabel">Rename Binder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="renameBinderForm">
+                        <div class="mb-3">
+                            <label for="newBinderName" class="form-label">New Name</label>
+                            <input type="text" class="form-control" id="newBinderName" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmRenameBtn">Rename</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Binder Modal -->
+    <div class="modal fade" id="deleteBinderModal" tabindex="-1" aria-labelledby="deleteBinderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteBinderModalLabel">Delete Binder</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="deleteWarning"></p>
+                    <form id="deleteBinderForm">
+                        <div class="mb-3">
+                            <label for="confirmDelete" class="form-label">Type the binder name to confirm:</label>
+                            <input type="text" class="form-control" id="confirmDelete" placeholder="Type to confirm deletion">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn" disabled>Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div id="contextMenu" class="context-menu d-none">
+        <button class="context-menu-item" data-action="open">📖 Open</button>
+        <button class="context-menu-item" data-action="rename">✏ Rename</button>
+        <button class="context-menu-item text-danger" data-action="delete">🗑 Delete</button>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binder — Settings</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body class="settings-page">
+    <!-- Global Top Bar -->
+    <nav class="top-bar">
+        <div class="container-fluid">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <a href="index.html" class="shelf-link">← Shelf</a>
+                </div>
+                <div class="top-bar-center">
+                    <span class="binder-brand">⚙ SETTINGS</span>
+                </div>
+                <div class="top-bar-right">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="settings-main">
+        <div class="settings-container">
+            <h1>Settings</h1>
+
+            <!-- Models Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Models</h2>
+                    <button class="btn btn-link btn-sm" id="reset-models">reset to default</button>
+                </div>
+                <form id="models-form">
+                    <div class="mb-3">
+                        <label for="llm-primary" class="form-label">LLM Primary</label>
+                        <input type="text" class="form-control" id="llm-primary" value="qwen3:14b">
+                        <small class="text-muted">Primary language model for generation</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="llm-quality" class="form-label">LLM Quality Mode</label>
+                        <input type="text" class="form-control" id="llm-quality" value="qwen3.5:27b">
+                        <small class="text-muted">Larger model for Learning Guide mode</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="embedding-model" class="form-label">Embedding Model</label>
+                        <input type="text" class="form-control" id="embedding-model" value="qwen3-embedding:0.6b">
+                        <small class="text-muted">
+                            ⚠ Changing this orphans existing collections. All binders must be re-ingested after save.
+                        </small>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Retrieval Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Retrieval</h2>
+                    <button class="btn btn-link btn-sm" id="reset-retrieval">reset to default</button>
+                </div>
+                <form id="retrieval-form">
+                    <div class="mb-3">
+                        <label for="top-k" class="form-label">Top K Results</label>
+                        <input type="number" class="form-control" id="top-k" min="3" max="10" value="5">
+                        <small class="text-muted">Number of sources to retrieve (3–10)</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="chunk-size" class="form-label">Chunk Size</label>
+                        <input type="number" class="form-control" id="chunk-size" value="1000">
+                        <small class="text-muted">Characters per chunk for embedding</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="chunk-overlap" class="form-label">Chunk Overlap</label>
+                        <input type="number" class="form-control" id="chunk-overlap" value="200">
+                        <small class="text-muted">Characters of overlap between chunks</small>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Servers & Paths Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Servers & Paths</h2>
+                    <button class="btn btn-link btn-sm" id="reset-servers">reset to default</button>
+                </div>
+                <form id="servers-form">
+                    <div class="mb-3">
+                        <label for="ollama-url" class="form-label">Ollama Base URL</label>
+                        <input type="url" class="form-control" id="ollama-url" value="http://ai-lab:11434">
+                        <small class="text-muted">Base URL for Ollama API</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sqlite-path" class="form-label">SQLite Database Path</label>
+                        <input type="text" class="form-control" id="sqlite-path" value="./data/binder.db">
+                        <small class="text-muted">Path to SQLite database</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="chromadb-path" class="form-label">ChromaDB Path</label>
+                        <input type="text" class="form-control" id="chromadb-path" value="./data/chroma">
+                        <small class="text-muted">Path to ChromaDB vector store</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bind-address" class="form-label">Bind Address</label>
+                        <input type="text" class="form-control" id="bind-address" value="127.0.0.1">
+                        <small class="text-muted">Network interface to bind to (127.0.0.1 = localhost only)</small>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="lan-mode" value="">
+                        <label class="form-check-label" for="lan-mode">
+                            Allow LAN access (0.0.0.0)
+                        </label>
+                        <small class="d-block text-danger">⚠ Security warning: exposes Binder to your entire network. Use only in trusted networks.</small>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Diagnostics Section -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Diagnostics</h2>
+                </div>
+                <div class="diagnostics-content">
+                    <div class="mb-3">
+                        <h5>Ollama Status</h5>
+                        <div id="ollama-status" class="alert alert-info">
+                            <span id="ollama-status-text">Checking…</span>
+                            <button class="btn btn-sm btn-outline-info ms-2" id="ollama-check-btn">Check</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>Available Models</h5>
+                        <div id="models-list" class="models-list">
+                            <p class="text-muted">Fetching models…</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>Trace Log</h5>
+                        <p id="trace-log-path" class="text-muted">./logs/binder.log</p>
+                        <button class="btn btn-sm btn-outline-secondary" id="open-log-btn">Open last log</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Save Button -->
+            <div class="settings-actions">
+                <button class="btn btn-secondary" id="cancel-btn">Cancel</button>
+                <button class="btn btn-primary" id="save-btn">Save Settings</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast" class="toast" role="alert" aria-live="polite" aria-atomic="true">
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binder — Inside</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body class="binder-page">
+    <!-- Global Top Bar -->
+    <nav class="top-bar">
+        <div class="container-fluid">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <a href="index.html" class="shelf-link">← Shelf</a>
+                </div>
+                <div class="top-bar-center">
+                    <div class="ollama-status">
+                        <span class="status-dot online"></span>
+                        <span class="status-text">Ollama: qwen3:14b</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <a href="settings.html" class="settings-link" title="Settings">⚙ Settings</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ollama Down Banner -->
+    <div id="ollama-banner" class="ollama-banner alert alert-warning mb-0 d-none">
+        <div class="container-fluid">
+            <div class="banner-content">
+                <span>⚠ Ollama unreachable at ai-lab:11434 — generation and new ingestion are paused. Your data is safe.</span>
+                <div class="banner-actions">
+                    <button class="btn btn-sm btn-outline-warning" id="retry-btn">Retry</button>
+                    <button class="btn btn-sm btn-link text-warning" id="dismiss-banner">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Two Pane Layout -->
+    <main class="binder-main">
+        <!-- Left Pane: Sources & Sections -->
+        <aside class="sources-pane">
+            <!-- Binder Header -->
+            <div class="binder-header">
+                <h2 id="binder-title" class="binder-title">📓 CAPTURE THEBRAIN</h2>
+                <p id="binder-desc" class="binder-description">Evergreen notes methodology</p>
+                <div class="binder-stats">
+                    <span id="source-count">0 sources</span>
+                </div>
+            </div>
+
+            <!-- Error Banner -->
+            <div id="error-banner" class="alert alert-warning d-none">
+                <span id="error-text"></span>
+                <button class="btn btn-sm btn-outline-warning ms-2" id="error-retry-btn">Retry</button>
+                <button class="btn btn-sm btn-link" id="error-skip-btn">Skip for now</button>
+            </div>
+
+            <!-- Sources Section -->
+            <div class="sources-section">
+                <div class="sources-header">
+                    <h3>SOURCES</h3>
+                    <button class="btn btn-sm btn-link" id="add-source-btn" title="Add a new source">+ Add</button>
+                </div>
+
+                <!-- Sources Tree -->
+                <div id="sources-tree" class="sources-tree">
+                    <!-- Sources are populated here by JavaScript -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Pane: Chat -->
+        <section class="chat-pane">
+            <!-- Conversation Header -->
+            <div class="chat-header">
+                <span class="conversation-info">Conversation <span id="current-convo">1</span> of <span id="total-convo">1</span></span>
+                <div class="chat-actions">
+                    <button class="btn btn-sm btn-primary" id="new-chat-btn">+ New Chat</button>
+                    <button class="btn btn-sm btn-link text-danger" id="delete-chat-btn">🗑</button>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="messages-container" class="messages-container">
+                <!-- Messages are populated here by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="chat-empty-state" class="chat-empty-state d-none">
+                <div class="empty-content">
+                    <h3>This binder has no sources yet.</h3>
+                    <p>Chat stays locked until at least one is ingested.</p>
+                    <div class="button-group">
+                        <button class="btn btn-primary btn-sm" id="add-files-empty">📎 Add files</button>
+                        <button class="btn btn-primary btn-sm" id="add-url-empty">🔗 Add URL</button>
+                        <button class="btn btn-primary btn-sm" id="add-paste-empty">▤ Paste text</button>
+                        <button class="btn btn-outline-primary btn-sm" id="add-section-empty">+ New section</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Composer -->
+            <div class="chat-footer">
+                <div class="composer-tabs">
+                    <button class="composer-tab active" data-tab="ask">Ask</button>
+                    <button class="composer-tab" data-tab="files">📎 Files</button>
+                    <button class="composer-tab" data-tab="url">🔗 URL</button>
+                    <button class="composer-tab" data-tab="paste">▤ Paste</button>
+                </div>
+
+                <!-- Ask Tab (active by default) -->
+                <div class="composer-content active" data-tab="ask">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="message-input" placeholder="Ask about your sources…" aria-label="Ask about your sources">
+                        <div class="style-selector">
+                            <div class="btn-group btn-group-sm" role="group">
+                                <input type="radio" class="btn-check" name="style" id="style-default" value="default" checked>
+                                <label class="btn btn-outline-secondary" for="style-default">Default</label>
+                                <input type="radio" class="btn-check" name="style" id="style-learning" value="learning">
+                                <label class="btn btn-outline-secondary" for="style-learning">Learning Guide</label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="send-btn" type="button">➤ Send</button>
+                        <button class="btn btn-outline-secondary d-none" id="stop-btn" type="button">⏹ Stop</button>
+                    </div>
+                </div>
+
+                <!-- Files Tab -->
+                <div class="composer-content" data-tab="files">
+                    <div class="file-dropzone" id="file-dropzone">
+                        <p>Drag and drop PDF, DOCX, TXT, MD files here or click to browse</p>
+                        <small>100-page PDF → searchable in under 3 minutes</small>
+                        <input type="file" id="file-input" multiple accept=".pdf,.docx,.txt,.md" style="display: none;">
+                    </div>
+                    <div class="mt-3">
+                        <select id="file-destination" class="form-select form-select-sm mb-2">
+                            <option value="root">Add to: Root level</option>
+                            <!-- Sections populated by JavaScript -->
+                        </select>
+                        <button class="btn btn-primary btn-sm w-100" id="upload-files-btn">Add to binder</button>
+                    </div>
+                </div>
+
+                <!-- URL Tab -->
+                <div class="composer-content" data-tab="url">
+                    <div class="input-group mb-2">
+                        <input type="url" class="form-control" id="url-input" placeholder="https://example.com">
+                        <button class="btn btn-outline-secondary" id="fetch-url-btn" type="button">Fetch</button>
+                    </div>
+                    <small class="text-muted">JS-only pages: unsupported in v1</small>
+                    <div class="mt-3">
+                        <select id="url-destination" class="form-select form-select-sm mb-2">
+                            <option value="root">Add to: Root level</option>
+                            <!-- Sections populated by JavaScript -->
+                        </select>
+                        <button class="btn btn-primary btn-sm w-100" id="add-url-btn">Add to binder</button>
+                    </div>
+                </div>
+
+                <!-- Paste Tab -->
+                <div class="composer-content" data-tab="paste">
+                    <div class="mb-2">
+                        <input type="text" class="form-control" id="paste-title" placeholder="Title (optional, defaults to first line)">
+                    </div>
+                    <div class="mb-2">
+                        <textarea class="form-control" id="paste-content" rows="6" placeholder="Paste your text here…"></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <select id="paste-destination" class="form-select form-select-sm">
+                            <option value="root">Add to: Root level</option>
+                            <!-- Sections populated by JavaScript -->
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-100" id="add-paste-btn">Add to binder</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Source Modal -->
+    <div class="modal fade" id="addSourceModal" tabindex="-1" aria-labelledby="addSourceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addSourceModalLabel">Add Source</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="nav nav-tabs mb-3" role="tablist">
+                        <button class="nav-link active" id="add-files-tab" data-bs-toggle="tab" data-bs-target="#add-files-content" type="button" role="tab">📎 Files</button>
+                        <button class="nav-link" id="add-url-tab" data-bs-toggle="tab" data-bs-target="#add-url-content" type="button" role="tab">🔗 URL</button>
+                        <button class="nav-link" id="add-paste-tab" data-bs-toggle="tab" data-bs-target="#add-paste-content" type="button" role="tab">▤ Paste</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="add-files-content" role="tabpanel">
+                            <div class="file-dropzone" id="modal-file-dropzone">
+                                <p>Drop files here or click to browse</p>
+                                <input type="file" id="modal-file-input" multiple accept=".pdf,.docx,.txt,.md" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="add-url-content" role="tabpanel">
+                            <div class="input-group mb-2">
+                                <input type="url" class="form-control" id="modal-url-input" placeholder="https://example.com">
+                                <button class="btn btn-outline-secondary" id="modal-fetch-url-btn" type="button">Fetch</button>
+                            </div>
+                            <small class="text-muted">JS-only pages: unsupported in v1</small>
+                        </div>
+                        <div class="tab-pane fade" id="add-paste-content" role="tabpanel">
+                            <div class="mb-2">
+                                <input type="text" class="form-control" id="modal-paste-title" placeholder="Title (optional)">
+                            </div>
+                            <div class="mb-2">
+                                <textarea class="form-control" id="modal-paste-text" rows="6" placeholder="Paste your text here…"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <label class="form-label">Add to:</label>
+                        <select id="modal-destination" class="form-select">
+                            <option value="root">Root level</option>
+                            <!-- Sections populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="modal-add-source-btn">Add to binder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="toast" class="toast" role="alert" aria-live="polite" aria-atomic="true">
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="binder.js"></script>
+</body>
+</html>
